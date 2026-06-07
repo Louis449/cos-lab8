@@ -40,6 +40,13 @@
         $user = mysqli_fetch_assoc($result);
 
         mysqli_close($conn);
+
+        if (isset($_GET['updated'])) {
+            echo "<p style='text-align: center; color: green;'> Successfully updated email! </p>";
+        }
+        if (isset($_GET['error'])) {
+            echo "<p style='text-align: center; color: red;'> New email cannot be the same email! </p>";
+        }
     ?>
     <div id="content">
         <h1>My Profile</h1>
