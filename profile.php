@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <style>
+
+    </style>
 </head>
 <body>
     <?php
@@ -22,8 +25,7 @@
 
         mysqli_close($conn);
     ?>
-    <h1>Welcome, <?php echo $_SESSION['username']; ?></h1>
-    <h2>My Profile</h2>
+    <h1>My Profile</h1>
     <section>
         <p>Username: <?php echo htmlspecialchars($user['username']) ?></p>
         <p>Email: <?php echo htmlspecialchars($user['email']) ?></p>
@@ -35,5 +37,8 @@
         <input type="email" id="email" name="email" required><br>
         <input type="submit" value="Submit">
     </form>
+    <?php
+        include 'footer.inc';
+    ?>
 </body>
 </html>
