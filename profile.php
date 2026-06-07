@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 17px;
+        }
+        input[type="submit"] {
+            padding: 5px;
+            background: #4f46e5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -25,18 +41,20 @@
 
         mysqli_close($conn);
     ?>
-    <h1>My Profile</h1>
-    <section>
-        <p>Username: <?php echo htmlspecialchars($user['username']) ?></p>
-        <p>Email: <?php echo htmlspecialchars($user['email']) ?></p>
-    </section>
+    <div id="content">
+        <h1>My Profile</h1>
+        <section>
+            <p>Username: <?php echo htmlspecialchars($user['username']) ?></p>
+            <p>Email: <?php echo htmlspecialchars($user['email']) ?></p>
+        </section>
 
-    <h3>Edit Profile</h3>
-    <form action="update_profile.php" method="POST">
-        <label for="email">New Email Address: </label><br>
-        <input type="email" id="email" name="email" required><br>
-        <input type="submit" value="Submit">
-    </form>
+        <h3>Edit Profile</h3>
+        <form action="update_profile.php" method="POST">
+            <label for="email">New Email Address</label><br>
+            <input type="email" id="email" name="email" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     <?php
         include 'footer.inc';
     ?>
